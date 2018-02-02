@@ -4,7 +4,7 @@
 #
 Name     : R-rmarkdown
 Version  : 1.8
-Release  : 2
+Release  : 3
 URL      : https://cran.r-project.org/src/contrib/rmarkdown_1.8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rmarkdown_1.8.tar.gz
 Summary  : Dynamic Documents for R
