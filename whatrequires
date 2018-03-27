@@ -1,1 +1,19 @@
 # This file contains recursive sources that require this package
+R-bipartite
+R-brms
+R-broom
+R-caret
+R-compositions
+R-dygraphs
+R-ggjoy
+R-ggridges
+R-modelr
+R-recipes
+R-reprex
+R-rgl
+R-rsconnect
+R-rstanarm
+R-shinystan
+R-sna
+R-tidyverse
+apache-spark
