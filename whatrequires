@@ -1,19 +1,23 @@
 # This file contains recursive sources that require this package
+R-NMF
 R-bipartite
 R-brms
 R-broom
 R-caret
 R-compositions
+R-doRNG
 R-dygraphs
-R-ggjoy
-R-ggridges
+R-manipulateWidget
 R-modelr
+R-pkgmaker
 R-recipes
 R-reprex
 R-rgl
+R-rngtools
 R-rsconnect
 R-rstanarm
 R-shinystan
 R-sna
 R-tidyverse
+R-webshot
 apache-spark
