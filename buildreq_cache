@@ -1,9 +1,11 @@
 1.12
 R-base64enc
+R-cli
 R-htmltools
 R-jsonlite
 R-mime
 R-rlang
 R-shiny
 R-tinytex
+R-withr
 R-yaml

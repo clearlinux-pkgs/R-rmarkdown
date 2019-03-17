@@ -4,25 +4,23 @@
 #
 Name     : R-rmarkdown
 Version  : 1.12
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/rmarkdown_1.12.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rmarkdown_1.12.tar.gz
 Summary  : Dynamic Documents for R
 Group    : Development/Tools
 License  : GPL-3.0 MIT
-Requires: R-base64enc
-Requires: R-htmltools
-Requires: R-jsonlite
-Requires: R-mime
-Requires: R-shiny
-Requires: R-tinytex
-Requires: R-yaml
+Requires: R-cli
+Requires: R-withr
 BuildRequires : R-base64enc
+BuildRequires : R-cli
 BuildRequires : R-htmltools
 BuildRequires : R-jsonlite
 BuildRequires : R-mime
+BuildRequires : R-rlang
 BuildRequires : R-shiny
 BuildRequires : R-tinytex
+BuildRequires : R-withr
 BuildRequires : R-yaml
 BuildRequires : buildreq-R
 
@@ -38,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552571323
+export SOURCE_DATE_EPOCH=1552831471
 
 %install
-export SOURCE_DATE_EPOCH=1552571323
+export SOURCE_DATE_EPOCH=1552831471
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -77,8 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library rmarkdown|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  rmarkdown || :
 
 
 %files
@@ -305,3 +302,63 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/rmarkdown/rmd/slidy/Slidy2/styles/w3c-blue.css
 /usr/lib64/R/library/rmarkdown/rmd/slidy/default.html
 /usr/lib64/R/library/rmarkdown/rstudio/templates/project/skeleton.dcf
+/usr/lib64/R/library/rmarkdown/tests/rmd/output_dir.Rmd
+/usr/lib64/R/library/rmarkdown/tests/rmd/two-bibs.Rmd
+/usr/lib64/R/library/rmarkdown/tests/rmd/word.Rmd
+/usr/lib64/R/library/rmarkdown/tests/shiny/01-basic-input.Rmd
+/usr/lib64/R/library/rmarkdown/tests/shiny/02-data-table.Rmd
+/usr/lib64/R/library/rmarkdown/tests/shiny/03-rm-all.Rmd
+/usr/lib64/R/library/rmarkdown/tests/shiny/04-prerendered-envir.Rmd
+/usr/lib64/R/library/rmarkdown/tests/testrmd.R
+/usr/lib64/R/library/rmarkdown/tests/testthat.R
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/csvs/csv1.csv
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/csvs/csv2.csv
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/csvs/other/csv3.csv
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/directory-refs.Rmd
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/empty.Rmd
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/empty.bib
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/empty.csl
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/empty.css
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/empty.csv
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/empty.html
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/empty.jpg
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/empty.js
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/empty.md
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/empty.png
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/empty.tsv
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/empty/empty.csv
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/file-exists.Rmd
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/has-css.Rmd
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/has-image.css
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/html.html
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/markdown.md
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/nonempty/empty.csv
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/nonempty/empty.jpg
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/pdf.Rmd
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/period.Rmd
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/quotes.Rmd
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/r-notebook.Rmd
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/readcsv-source.R
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/readcsv.R
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/readcsv.Rmd
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/resource-files.Rmd
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/rmarkdown.Rmd
+/usr/lib64/R/library/rmarkdown/tests/testthat/resources/tinyplot.png
+/usr/lib64/R/library/rmarkdown/tests/testthat/site/PageA.Rmd
+/usr/lib64/R/library/rmarkdown/tests/testthat/site/PageB.rmd
+/usr/lib64/R/library/rmarkdown/tests/testthat/site/PageC.md
+/usr/lib64/R/library/rmarkdown/tests/testthat/site/_site.yml
+/usr/lib64/R/library/rmarkdown/tests/testthat/site/docs.txt
+/usr/lib64/R/library/rmarkdown/tests/testthat/site/index.Rmd
+/usr/lib64/R/library/rmarkdown/tests/testthat/site/script.R
+/usr/lib64/R/library/rmarkdown/tests/testthat/site/styles.css
+/usr/lib64/R/library/rmarkdown/tests/testthat/test-dependencies.R
+/usr/lib64/R/library/rmarkdown/tests/testthat/test-encode-decode.R
+/usr/lib64/R/library/rmarkdown/tests/testthat/test-formats.R
+/usr/lib64/R/library/rmarkdown/tests/testthat/test-formats.Rmd
+/usr/lib64/R/library/rmarkdown/tests/testthat/test-htmlparse.R
+/usr/lib64/R/library/rmarkdown/tests/testthat/test-ioslides.R
+/usr/lib64/R/library/rmarkdown/tests/testthat/test-notebook.R
+/usr/lib64/R/library/rmarkdown/tests/testthat/test-params.R
+/usr/lib64/R/library/rmarkdown/tests/testthat/test-resources.R
+/usr/lib64/R/library/rmarkdown/tests/testthat/test-site.R
