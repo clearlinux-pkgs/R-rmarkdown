@@ -1,9 +1,8 @@
 # This file contains recursive sources that require this package
 R-devtools
-R-dygraphs
 R-pkgdown
-R-pkgmaker
 R-reprex
+R-rgl
 R-rsconnect
 R-webshot
 apache-spark

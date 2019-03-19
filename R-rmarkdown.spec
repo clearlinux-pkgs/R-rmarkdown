@@ -4,16 +4,16 @@
 #
 Name     : R-rmarkdown
 Version  : 1.12
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/rmarkdown_1.12.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rmarkdown_1.12.tar.gz
 Summary  : Dynamic Documents for R
 Group    : Development/Tools
 License  : GPL-3.0 MIT
-Requires: R-cli
-Requires: R-withr
+Requires: R-evaluate
 BuildRequires : R-base64enc
 BuildRequires : R-cli
+BuildRequires : R-evaluate
 BuildRequires : R-htmltools
 BuildRequires : R-jsonlite
 BuildRequires : R-mime
@@ -36,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552831471
+export SOURCE_DATE_EPOCH=1552962552
 
 %install
-export SOURCE_DATE_EPOCH=1552831471
+export SOURCE_DATE_EPOCH=1552962552
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
