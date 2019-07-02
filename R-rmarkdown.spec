@@ -4,20 +4,36 @@
 #
 Name     : R-rmarkdown
 Version  : 1.13
-Release  : 25
+Release  : 26
 URL      : https://cran.r-project.org/src/contrib/rmarkdown_1.13.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rmarkdown_1.13.tar.gz
 Summary  : Dynamic Documents for R
 Group    : Development/Tools
 License  : GPL-3.0 MIT
 Requires: R-base64enc
+Requires: R-evaluate
 Requires: R-htmltools
 Requires: R-jsonlite
-Requires: R-shiny
+Requires: R-knitr
+Requires: R-mime
+Requires: R-stringr
+Requires: R-tinytex
+Requires: R-xfun
+Requires: R-yaml
 BuildRequires : R-base64enc
+BuildRequires : R-cli
+BuildRequires : R-evaluate
 BuildRequires : R-htmltools
 BuildRequires : R-jsonlite
+BuildRequires : R-knitr
+BuildRequires : R-mime
+BuildRequires : R-rlang
 BuildRequires : R-shiny
+BuildRequires : R-stringr
+BuildRequires : R-tinytex
+BuildRequires : R-withr
+BuildRequires : R-xfun
+BuildRequires : R-yaml
 BuildRequires : buildreq-R
 
 %description
@@ -32,10 +48,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1558565918
+export SOURCE_DATE_EPOCH=1562028416
 
 %install
-export SOURCE_DATE_EPOCH=1558565918
+export SOURCE_DATE_EPOCH=1562028416
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
