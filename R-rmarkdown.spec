@@ -4,7 +4,7 @@
 #
 Name     : R-rmarkdown
 Version  : 1.16
-Release  : 32
+Release  : 33
 URL      : https://cran.r-project.org/src/contrib/rmarkdown_1.16.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rmarkdown_1.16.tar.gz
 Summary  : Dynamic Documents for R
@@ -16,7 +16,6 @@ Requires: R-htmltools
 Requires: R-jsonlite
 Requires: R-knitr
 Requires: R-mime
-Requires: R-shiny
 Requires: R-stringr
 Requires: R-tinytex
 Requires: R-xfun
@@ -33,6 +32,7 @@ BuildRequires : R-tinytex
 BuildRequires : R-xfun
 BuildRequires : R-yaml
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 This a jQuery UI custom build, downloaded from:
@@ -46,10 +46,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569990636
+export SOURCE_DATE_EPOCH=1571891877
 
 %install
-export SOURCE_DATE_EPOCH=1569990636
+export SOURCE_DATE_EPOCH=1571891877
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "

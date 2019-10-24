@@ -1,7 +1,9 @@
 # This file contains recursive sources that require this package
 R-caret
 R-devtools
+R-dygraphs
 R-pkgdown
 R-reprex
+R-rgl
 R-rsconnect
 apache-spark
