@@ -4,7 +4,7 @@
 #
 Name     : R-rmarkdown
 Version  : 1.16
-Release  : 33
+Release  : 34
 URL      : https://cran.r-project.org/src/contrib/rmarkdown_1.16.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rmarkdown_1.16.tar.gz
 Summary  : Dynamic Documents for R
