@@ -4,7 +4,7 @@
 #
 Name     : R-rmarkdown
 Version  : 2.1
-Release  : 40
+Release  : 41
 URL      : https://cran.r-project.org/src/contrib/rmarkdown_2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rmarkdown_2.1.tar.gz
 Summary  : Dynamic Documents for R
@@ -16,7 +16,6 @@ Requires: R-htmltools
 Requires: R-jsonlite
 Requires: R-knitr
 Requires: R-mime
-Requires: R-shiny
 Requires: R-stringr
 Requires: R-tinytex
 Requires: R-xfun
@@ -27,7 +26,6 @@ BuildRequires : R-htmltools
 BuildRequires : R-jsonlite
 BuildRequires : R-knitr
 BuildRequires : R-mime
-BuildRequires : R-shiny
 BuildRequires : R-stringr
 BuildRequires : R-tinytex
 BuildRequires : R-xfun
@@ -40,21 +38,22 @@ http://jqueryui.com/download/#!version=1.11.4&components=11111111111101111111111
 
 %prep
 %setup -q -c -n rmarkdown
+cd %{_builddir}/rmarkdown
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1579629107
+export SOURCE_DATE_EPOCH=1589768222
 
 %install
-export SOURCE_DATE_EPOCH=1579629107
+export SOURCE_DATE_EPOCH=1589768222
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
