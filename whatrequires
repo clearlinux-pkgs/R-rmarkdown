@@ -1,5 +1,6 @@
 # This file contains recursive sources that require this package
 R-dygraphs
+R-flextable
 R-formattable
 R-kableExtra
 R-pkgdown
