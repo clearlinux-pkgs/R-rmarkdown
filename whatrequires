@@ -2,6 +2,7 @@
 R-dygraphs
 R-flextable
 R-formattable
+R-htmlwidgets
 R-kableExtra
 R-pkgdown
 R-reprex
