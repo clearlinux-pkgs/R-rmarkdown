@@ -4,7 +4,7 @@
 #
 Name     : R-rmarkdown
 Version  : 2.20
-Release  : 80
+Release  : 81
 URL      : https://cran.r-project.org/src/contrib/rmarkdown_2.20.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rmarkdown_2.20.tar.gz
 Summary  : Dynamic Documents for R
@@ -32,9 +32,6 @@ BuildRequires : R-tinytex
 BuildRequires : R-xfun
 BuildRequires : R-yaml
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 This a jQuery UI custom build, downloaded from:
@@ -57,10 +54,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1674231805
+export SOURCE_DATE_EPOCH=1678836337
 
 %install
-export SOURCE_DATE_EPOCH=1674231805
+export SOURCE_DATE_EPOCH=1678836337
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/R-rmarkdown
 cp %{_builddir}/rmarkdown/inst/COPYING %{buildroot}/usr/share/package-licenses/R-rmarkdown/4d76d5eed4f10a2d7dca86d55d5f44d1d0aab6cb || :
