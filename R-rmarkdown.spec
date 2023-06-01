@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-rmarkdown
-Version  : 2.21
-Release  : 84
-URL      : https://cran.r-project.org/src/contrib/rmarkdown_2.21.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/rmarkdown_2.21.tar.gz
+Version  : 2.22
+Release  : 85
+URL      : https://cran.r-project.org/src/contrib/rmarkdown_2.22.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/rmarkdown_2.22.tar.gz
 Summary  : Dynamic Documents for R
 Group    : Development/Tools
 License  : GPL-3.0 MIT
@@ -37,8 +37,7 @@ BuildRequires : R-yaml
 BuildRequires : buildreq-R
 
 %description
-This a jQuery UI custom build, downloaded from:
-http://jqueryui.com/download/#!version=1.11.4&components=1111111111110111111111111111111111111
+# rmarkdown <a href="https://pkgs.rstudio.com/rmarkdown/"><img src="man/figures/logo.png" align="right" height="138" /></a>
 
 %package license
 Summary: license components for the R-rmarkdown package.
@@ -50,21 +49,25 @@ license components for the R-rmarkdown package.
 
 %prep
 %setup -q -n rmarkdown
+pushd ..
+cp -a rmarkdown buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679942963
+export SOURCE_DATE_EPOCH=1685647525
 
 %install
-export SOURCE_DATE_EPOCH=1679942963
+export SOURCE_DATE_EPOCH=1685647525
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/R-rmarkdown
 cp %{_builddir}/rmarkdown/inst/COPYING %{buildroot}/usr/share/package-licenses/R-rmarkdown/4d76d5eed4f10a2d7dca86d55d5f44d1d0aab6cb || :
 cp %{_builddir}/rmarkdown/inst/NOTICE %{buildroot}/usr/share/package-licenses/R-rmarkdown/382b54d07ad938bd565388b3f20b5cc6abdcb5c2 || :
 cp %{_builddir}/rmarkdown/inst/rmd/h/ionicons/LICENSE %{buildroot}/usr/share/package-licenses/R-rmarkdown/f46103e895c6a4a7b1ee99280d134fffeec4ea72 || :
+cp %{_builddir}/rmarkdown/inst/rmd/h/jqueryui/LICENSE.txt %{buildroot}/usr/share/package-licenses/R-rmarkdown/15df6665dfd90f5cd8fdfde4c0c43051fbb76dae || :
 cp %{_builddir}/rmarkdown/inst/rmd/h/tabset/LICENSE %{buildroot}/usr/share/package-licenses/R-rmarkdown/ed711e39228118ba417650f6e3b5f61872d44e5a || :
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -102,6 +105,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc . || :
 
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -222,8 +226,8 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/rmarkdown/rmd/h/ionicons/css/ionicons.css
 /usr/lib64/R/library/rmarkdown/rmd/h/ionicons/css/ionicons.min.css
 /usr/lib64/R/library/rmarkdown/rmd/h/ionicons/fonts/ionicons.ttf
-/usr/lib64/R/library/rmarkdown/rmd/h/jqueryui-AUTHORS.txt
-/usr/lib64/R/library/rmarkdown/rmd/h/jqueryui/README
+/usr/lib64/R/library/rmarkdown/rmd/h/jqueryui/AUTHORS.txt
+/usr/lib64/R/library/rmarkdown/rmd/h/jqueryui/LICENSE.txt
 /usr/lib64/R/library/rmarkdown/rmd/h/jqueryui/images/ui-icons_444444_256x240.png
 /usr/lib64/R/library/rmarkdown/rmd/h/jqueryui/images/ui-icons_555555_256x240.png
 /usr/lib64/R/library/rmarkdown/rmd/h/jqueryui/images/ui-icons_777620_256x240.png
@@ -460,6 +464,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 
 %files license
 %defattr(0644,root,root,0755)
+/usr/share/package-licenses/R-rmarkdown/15df6665dfd90f5cd8fdfde4c0c43051fbb76dae
 /usr/share/package-licenses/R-rmarkdown/382b54d07ad938bd565388b3f20b5cc6abdcb5c2
 /usr/share/package-licenses/R-rmarkdown/4d76d5eed4f10a2d7dca86d55d5f44d1d0aab6cb
 /usr/share/package-licenses/R-rmarkdown/ed711e39228118ba417650f6e3b5f61872d44e5a
