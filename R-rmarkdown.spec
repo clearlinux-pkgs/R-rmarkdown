@@ -5,7 +5,7 @@
 #
 Name     : R-rmarkdown
 Version  : 2.22
-Release  : 85
+Release  : 86
 URL      : https://cran.r-project.org/src/contrib/rmarkdown_2.22.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rmarkdown_2.22.tar.gz
 Summary  : Dynamic Documents for R
