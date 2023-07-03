@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-rmarkdown
-Version  : 2.22
-Release  : 86
-URL      : https://cran.r-project.org/src/contrib/rmarkdown_2.22.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/rmarkdown_2.22.tar.gz
+Version  : 2.23
+Release  : 87
+URL      : https://cran.r-project.org/src/contrib/rmarkdown_2.23.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/rmarkdown_2.23.tar.gz
 Summary  : Dynamic Documents for R
 Group    : Development/Tools
 License  : GPL-3.0 MIT
@@ -58,10 +58,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685647525
+export SOURCE_DATE_EPOCH=1688416210
 
 %install
-export SOURCE_DATE_EPOCH=1685647525
+export SOURCE_DATE_EPOCH=1688416210
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/R-rmarkdown
 cp %{_builddir}/rmarkdown/inst/COPYING %{buildroot}/usr/share/package-licenses/R-rmarkdown/4d76d5eed4f10a2d7dca86d55d5f44d1d0aab6cb || :
@@ -341,6 +341,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/rmarkdown/rmd/slidy/slidy_shiny.js
 /usr/lib64/R/library/rmarkdown/rstudio/templates/project/skeleton.dcf
 /usr/lib64/R/library/rmarkdown/tests/rmd/anchor-sections.Rmd
+/usr/lib64/R/library/rmarkdown/tests/rmd/clean-format.Rmd
 /usr/lib64/R/library/rmarkdown/tests/rmd/output_dir.Rmd
 /usr/lib64/R/library/rmarkdown/tests/rmd/raw-header.Rmd
 /usr/lib64/R/library/rmarkdown/tests/rmd/two-authors.Rmd
