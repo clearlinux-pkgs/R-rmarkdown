@@ -7,7 +7,7 @@
 #
 Name     : R-rmarkdown
 Version  : 2.28
-Release  : 94
+Release  : 95
 URL      : https://cran.r-project.org/src/contrib/rmarkdown_2.28.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rmarkdown_2.28.tar.gz
 Summary  : Dynamic Documents for R
